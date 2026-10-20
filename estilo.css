@@ -223,10 +223,24 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 100%;
+    transition: all 0.3s ease;
 }
 
-.project-card.full-width {
+/* Nuevos estilos para las tarjetas con enlaces */
+.project-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.project-card-link.full-width {
     grid-column: span 2;
+}
+
+.project-card-link:hover .project-card {
+    border-color: var(--green-accent);
+    transform: translateY(-2px);
 }
 
 .card-header {
@@ -393,7 +407,7 @@ body {
         grid-template-columns: 1fr;
     }
     
-    .project-card.full-width {
+    .project-card-link.full-width {
         grid-column: span 1;
     }
 
