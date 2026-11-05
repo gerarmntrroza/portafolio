@@ -800,3 +800,13 @@ a {
   text-decoration-thickness: 2px;
   text-underline-offset: 8px;
 }
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+html {
+  scroll-padding-top: 100px;
+}
