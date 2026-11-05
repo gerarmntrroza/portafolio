@@ -792,3 +792,11 @@ a {
   font-size: 14px;
   color: var(--blanco);
 }
+
+.nav__links a[aria-current="location"] {
+  color: var(--blanco);
+  text-decoration: underline;
+  text-decoration-color: var(--verde);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 8px;
+}

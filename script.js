@@ -72,3 +72,40 @@ document.querySelectorAll(".gallery").forEach((gallery) => {
 
   update();
 });
+
+const watchedSections = document.querySelectorAll(".hero, main section[id]");
+const menuLinks = document.querySelectorAll(".nav__links a");
+
+function markActive(id) {
+  menuLinks.forEach((link) => {
+    if (id && link.getAttribute("href") === `#${id}`) {
+      link.setAttribute("aria-current", "location");
+    } else {
+      link.removeAttribute("aria-current");
+    }
+  });
+}
+
+const sectionObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        markActive(entry.target.id);
+      }
+    });
+  },
+  { rootMargin: "-40% 0px -55% 0px" }
+);
+
+watchedSections.forEach((section) => sectionObserver.observe(section));
+
+window.addEventListener(
+  "scroll",
+  () => {
+    const atBottom = window.innerHeight + window.scrollY >= document.body.scrollHeight - 2;
+    if (atBottom) {
+      markActive("contact");
+    }
+  },
+  { passive: true }
+);
