@@ -1,194 +1,291 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio - GM</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="estilo.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gerardo Monterroza — Portafolio</title>
+  <meta name="description" content="Portafolio de Gerardo Monterroza, estudiante y programador. Diseño experiencias digitales que la gente ama usar.">
+    <meta name="theme-color" content="#0f172a">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230f172a'/%3E%3Ctext x='4' y='44' font-family='Arial,sans-serif' font-weight='700' font-size='30' fill='%23ffffff'%3EGM%3Ctspan fill='%2310b981'%3E.%3C/tspan%3E%3C/text%3E%3C/svg%3E">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_LA">
+  <meta property="og:title" content="Gerardo Monterroza — Portafolio">
+  <meta property="og:description" content="Estudiante y programador. Diseño experiencias digitales que la gente ama usar.">
+  <meta property="og:url" content="https://TU-USUARIO.github.io/TU-REPOSITORIO/">
+  <meta property="og:image" content="https://TU-USUARIO.github.io/TU-REPOSITORIO/assets/img/vista-previa.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <header class="navbar">
-        <div class="logo">GM<span class="text-green">.</span></div>
-        <nav>
-            <a href="#projects">Projects</a>
-            <a href="#about">About me</a>
-            <a href="#contact">Contact me</a>
-            <a href="#contact" class="btn-talk">Talk to me</a>
-        </nav>
-    </header>
+    <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#inicio" class="logo" aria-label="Gerardo Monterroza, ir al inicio">GM<span>.</span></a>
 
-    <main class="container">
+      <nav class="nav__links" id="nav-links" aria-label="Principal">
+        <a href="#projects">Projects</a>
+        <a href="#about">About me</a>
+        <a href="#contact">Contact me</a>
+      </nav>
 
-        <section class="hero">
-            <span class="badge">Disponible para proyectos</span>
-            <h1>Diseño experiencias <span class="text-green">digitales</span><br>que la gente ama usar.</h1>
-            <p class="subtitle">Gerardo Monterroza - Estudiante y programador</p>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">Proyectos</a>
-                <a href="#about" class="btn btn-secondary">Descargar CV</a>
+      <a href="#contact" class="nav__cta">Talk to me</a>
+
+      <button class="nav__toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="inicio">
+
+    <section class="hero">
+      <div class="container">
+        <p class="badge">Disponible para proyectos</p>
+
+        <h1 class="hero__title">
+          Diseño experiencias <span class="accent">digitales</span><br class="br-desktop">
+          que la gente ama usar.
+        </h1>
+
+        <p class="hero__subtitle">
+          Gerardo Monterroza <span>— Estudiante y programador.</span>
+        </p>
+
+        <div class="hero__actions">
+          <a href="#projects" class="btn btn--primary">Ver proyectos</a>
+          <a href="assets/cv-gerardo-monterroza.pdf" class="btn btn--outline" download>Descargar CV</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <hr class="divider">
+    </div>
+
+    <section class="about" id="about">
+      <div class="container about__grid">
+        <div class="about__text">
+          <p class="section-label">About me</p>
+          <h2 class="section-title">Un trabajo de superación</h2>
+          <p>Con muchos años trabajando en la superación de manera integral. He trabajado en la programación de programas complejos, investigaciones y trabajos sociales variados.</p>
+          <p>Tengo habilidades de programación y apps digitales, inglés avanzado y valores trabajados durante años que me forman como un estudiante íntegro.</p>
+        </div>
+
+        <div class="about__side">
+          <h3 class="about__skills-title">Habilidades</h3>
+          <ul class="skills">
+            <li>Figma</li>
+            <li>Inglés</li>
+            <li>Programación</li>
+            <li>Pensamiento lógico</li>
+          </ul>
+
+          <div class="stats">
+            <div class="stat">
+              <span class="stat__value">+3 años</span>
+              <span class="stat__label">en la beca ¡supérate!</span>
             </div>
-        </section>
-
-       
-        <section id="about" class="about-grid">
-            <div class="about-info">
-                <span class="section-tag">About me</span>
-                <h2>Un trabajo de superación</h2>
-                <p>Con muchos años trabajando en la superación de manera integral. Me he enfocado en la comprensión de proyectos complejos, trayendo ideas en código y código en éxito.</p>
-                <p>Tengo habilidades de programación enfocadas a aplicaciones digitales, lógica avanzada y código. Trabajaré de la mano de un equipo motivado para un excelente resultado.</p>
+            <div class="stat">
+              <span class="stat__value">1</span>
+              <span class="stat__label">proyecto digital completado</span>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <div class="skills-info">
-                <span class="section-tag">Habilidades</span>
-                <div class="skills-tabs">
-                    <button class="tab-btn active">Figma</button>
-                    <button class="tab-btn">Ingles</button>
-                </div>
-                <div class="skills-tags">
-                    <span class="skill-tag">Programación</span>
-                    <span class="skill-tag">Pensamiento lógico</span>
-                </div>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <h3>+3 años</h3>
-                        <p>en la beca ¡supérate!</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>1</h3>
-                        <p>proyecto digital completado</p>
-                    </div>
-                </div>
+    <div class="container">
+      <hr class="divider">
+    </div>
+
+    <section class="projects" id="projects">
+      <div class="container">
+        <p class="section-label">Projects</p>
+        <h2 class="section-title">Proyectos destacados</h2>
+
+                <        <ul class="projects__grid">
+          <li class="project">
+            <div class="gallery" aria-label="Imágenes de Door to door">
+              <div class="gallery__track" tabindex="0">
+                <img src="assets/img/door-to-door-1.jpeg" alt="Pantalla principal de Door to door" width="800" height="450" loading="lazy">
+                <img src="assets/img/door-to-door-2.jpeg" alt="Seguimiento de encomiendas en Door to door" width="800" height="450" loading="lazy">
+                <img src="assets/img/door-to-door-3.jpeg" alt="Perfil de usuario en Door to door" width="800" height="450" loading="lazy">
+              </div>
+              <button class="gallery__btn gallery__btn--prev" type="button" aria-label="Imagen anterior">‹</button>
+              <button class="gallery__btn gallery__btn--next" type="button" aria-label="Imagen siguiente">›</button>
+              <span class="gallery__count" aria-live="polite">1 / 3</span>
             </div>
-        </section>
-
-        <section id="projects" class="projects-section">
-            <span class="section-tag">Projects</span>
-            <h2>Proyectos destacados</h2>
-        
-            <div class="projects-grid">
-                <a href="doortodoor.html" class="project-card-link">
-                    <div class="project-card">
-                        <div class="card-header">
-                            <h3>Door to door</h3>
-                            <span class="arrow-icon">↗</span>
-                        </div>
-                        <p>El proyecto Door to door aborda la resolución de la trazabilidad del proceso de envío mediante una app web interactiva para usuarios y negocios.</p>
-                        <p class="card-footer-text">Muestra información precisa del proceso en tiempo real. En desarrollo con un stack moderno y enfocado en UX.</p>
-                    </div>
-                </a>
-        
-                <a href="imdress.html" class="project-card-link">
-                    <div class="project-card">
-                        <div class="card-header">
-                            <h3>ImDress</h3>
-                            <span class="arrow-icon">↗</span>
-                        </div>
-                        <p>Plataforma e-commerce para la gestión de productos de moda enfocada en la personalización interactiva. Diseñada para ser escalable.</p>
-                        <p class="card-footer-text">Optimizada para la conversión con UI intuitiva y funciones como programación de entregas y la plataforma de e-commerce.</p>
-                    </div>
-                </a>
-        
-                <a href="tesis-apa.html" class="project-card-link">
-                    <div class="project-card">
-                        <div class="card-header">
-                            <h3>Tesis APA</h3>
-                            <span class="arrow-icon">↗</span>
-                        </div>
-                        <p>Un sistema de gestión e investigación en formato APA para académicos que buscan automatizar la edición de citas y referencias bibliográficas.</p>
-                        <p class="card-footer-text">Permite el formateo rápido de investigaciones y la estructuración conforme a estándares internacionales.</p>
-                    </div>
-                </a>
-        
-                <a href="minilibro.html" class="project-card-link">
-                    <div class="project-card">
-                        <div class="card-header">
-                            <h3>Mini libro</h3>
-                            <span class="arrow-icon">↗</span>
-                        </div>
-                        <p>Creación de historias en un formato dinámico e interactivo. Ideal para lectura en dispositivos móviles con interfaz optimizada para lectura rápida.</p>
-                        <p class="card-footer-text">Aplica un diseño sin distracciones enfocado en la experiencia de lectura y navegación.</p>
-                    </div>
-                </a>
-                
-                <a href="aseo-escolar.html" class="project-card-link full-width">
-                    <div class="project-card">
-                        <div class="card-header">
-                            <h3>Proyecto de aseo escolar</h3>
-                            <span class="arrow-icon">↗</span>
-                        </div>
-                        <p>Plataforma para la gestión, control y coordinación de las tareas de mantenimiento dentro de instituciones educativas, reduciendo tiempos y optimizando el uso de recursos.</p>
-                        <p class="card-footer-text">Un sistema integral e intuitivo para automatizar la asignación de roles y turnos.</p>
-                    </div>
-                </a>
+            <div class="project__header">
+              <h3 class="project__title">Door to door</h3>
+              <span class="project__number">1</span>
             </div>
-        </section>
+            <p>Proyecto digital que busca resolver el problema de la desinformación y poca conexión de las encomiendas entre los migrantes.</p>
+            <p>Me desempeñé como programador durante más de un año trabajando con Html, Java, Css, Adonis JS, etc.</p>
+          </li>
 
-        
-        <section class="experience-section">
-            <div class="exp-info">
-                <span class="section-tag">Experiencia</span>
-                <h2>Mi trayectoria</h2>
-                <p>Tres años trabajando en crear soluciones digitales desde el rol de la programación con diversas herramientas.</p>
+          <li class="project">
+            <div class="gallery" aria-label="Imágenes de ImDress">
+              <div class="gallery__track" tabindex="0">
+                <img src="assets/img/imdress-1.jpeg" alt="Pantalla de inicio de la app ImDress" width="800" height="450" loading="lazy">
+                <img src="assets/img/imdress-2.jpeg" alt="Catálogo de ropa en ImDress" width="800" height="450" loading="lazy">
+                <img src="assets/img/imdress-3.jpeg" alt="Proceso de alquiler en ImDress" width="800" height="450" loading="lazy">
+              </div>
+              <button class="gallery__btn gallery__btn--prev" type="button" aria-label="Imagen anterior">‹</button>
+              <button class="gallery__btn gallery__btn--next" type="button" aria-label="Imagen siguiente">›</button>
+              <span class="gallery__count" aria-live="polite">1 / 3</span>
             </div>
-
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="dot"></div>
-                    <div class="timeline-content">
-                        <h4>Door to door</h4>
-                        <p>2023 - 2024</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="dot active"></div>
-                    <div class="timeline-content">
-                        <h4>ImDress</h4>
-                        <p>2024</p>
-                    </div>
-                </div>
+            <div class="project__header">
+              <h3 class="project__title">ImDress</h3>
+              <span class="project__number">2</span>
             </div>
-        </section>
+            <p>App móvil que busca crear y mejorar un sistema de alquiler de ropa en la industria salvadoreña digitalizando el mercado poco explotado.</p>
+            <p>Ejercí como líder del proyecto con 7 miembros y también como programador mediante la plataforma de PowerApps.</p>
+          </li>
 
-        <section id="contact" class="contact-section">
-            <div class="contact-info">
-                <span class="section-tag">Contact</span>
-                <h2>¿Tienes un proyecto en mente?</h2>
-                <p>Siempre estoy abierto a nuevas oportunidades y colaboraciones. Cuéntame sobre tu proyecto y hagamos algo increíble juntos.</p>
-                
-                <a href="mailto:gerardo.monterroza39@gmail.com" class="email-link">gerardo.monterroza39@gmail.com</a>
-                <a href="mailto:gerardo.monterroza39@gmail.com" class="email-link">+503 6189-3258</a>
-
-                
-                <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/giovanni-monterroza-0b888b441/?isSelfProfile=true"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://github.com/gerarmntrroza"><i class="fa-brands fa-github"></i></a>
-                </div>
+          <li class="project">
+            <div class="gallery" aria-label="Imágenes de la Tesis APA">
+              <div class="gallery__track" tabindex="0">
+                <img src="assets/img/tesis-apa-1.jpeg" alt="Portada de la investigación sobre el abandono de perros" width="800" height="450" loading="lazy">
+                <img src="assets/img/tesis-apa-2.jpeg" alt="Página interna de la tesis en formato APA" width="800" height="450" loading="lazy">
+              </div>
+              <button class="gallery__btn gallery__btn--prev" type="button" aria-label="Imagen anterior">‹</button>
+              <button class="gallery__btn gallery__btn--next" type="button" aria-label="Imagen siguiente">›</button>
+              <span class="gallery__count" aria-live="polite">1 / 2</span>
             </div>
+            <div class="project__header">
+              <h3 class="project__title">Tesis APA</h3>
+              <span class="project__number">3</span>
+            </div>
+            <p>Creación de una investigación en formato APA sobre el abandono de perros en Lourdes buscando resolver o reducir esta problemática social.</p>
+            <p>Soy líder e investigador de un grupo de 5 estudiantes que estamos trabajando una tesis por casi 2 años.</p>
+          </li>
 
-            <form class="contact-form">
-                <div class="form-group">
-                    <label>Nombre</label>
-                    <input type="text" placeholder="Tu nombre completo" required>
-                </div>
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" placeholder="tu@email.com" required>
-                </div>
-                <div class="form-group">
-                    <label>Mensaje</label>
-                    <textarea rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
-                </div>
-                <button type="submit" class="btn btn-submit">Enviar mensaje</button>
-            </form>
-        </section>
+          <li class="project">
+            <div class="gallery" aria-label="Imágenes del Mini libro">
+              <div class="gallery__track" tabindex="0">
+                <img src="assets/img/mini-libro-1.jpeg" alt="Portada del Mini libro ilustrado a mano" width="800" height="450" loading="lazy">
+                <img src="assets/img/mini-libro-2.jpeg" alt="Página interior del Mini libro" width="800" height="450" loading="lazy">
+              </div>
+              <button class="gallery__btn gallery__btn--prev" type="button" aria-label="Imagen anterior">‹</button>
+              <button class="gallery__btn gallery__btn--next" type="button" aria-label="Imagen siguiente">›</button>
+              <span class="gallery__count" aria-live="polite">1 / 2</span>
+            </div>
+            <div class="project__header">
+              <h3 class="project__title">Mini libro</h3>
+              <span class="project__number">4</span>
+            </div>
+            <p>Creación y desarrollo de una memoria ilustrada de más de 15 páginas buscando trabajar un lado creativo y hacer reflexión en los lectores.</p>
+            <p>Hice toda la historia e ilustraciones a mano de un libro de 15 páginas buscando mostrar una historia personal a través del formato impreso.</p>
+          </li>
 
-    </main>
+          <li class="project project--wide">
+            <div class="project__header">
+              <h3 class="project__title">Proyecto de aseo escolar</h3>
+              <span class="project__number">5</span>
+            </div>
+            <p>Elaboración de un plan de aseo y ornato escolar junto con otros 3 estudiantes para mejorar la limpieza de la institución y beneficiar a más de 500 personas.</p>
+            <p>Participación en la logística y práctica del plan todos los sábados durante más de 6 meses.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="container">
+      <hr class="divider">
+    </div>
+
+    <section class="experience" id="experience">
+      <div class="container experience__grid">
+        <div class="experience__text">
+          <p class="section-label">Experience</p>
+          <h2 class="section-title">Mi trayectoria</h2>
+          <p>Tres años trabajando en crear soluciones digitales desde el rol de la programación con diversas herramientas.</p>
+        </div>
+
+        <ol class="timeline">
+          <li class="timeline__item">
+            <div class="timeline__card">
+              <h3>Door to door</h3>
+              <p>2025-2026</p>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <div class="timeline__card">
+              <h3>ImDress</h3>
+              <p>2024</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <div class="container">
+      <hr class="divider">
+    </div>
+
+        <section class="contact" id="contact">
+      <div class="container contact__grid">
+        <div class="contact__info">
+          <p class="section-label">Contact</p>
+          <h2 class="section-title">¿Tienes un proyecto en mente?</h2>
+          <p class="contact__text">Siempre estoy abierto a escuchar nuevas ideas y colaboraciones. Cuéntame sobre tu proyecto y hagamos algo increíble juntos.</p>
+
+          <address class="contact__data">
+            <a href="mailto:gerardomonterroza39@gmail.com">gerardomonterroza39@gmail.com</a>
+            <a href="tel:+50361893258">+503 6189-3258</a>
+          </address>
+
+          <ul class="socials">
+            <li>
+              <a href="https://www.linkedin.com/in/giovanni-monterroza-0b888b441/?isSelfProfile=true" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/gerarmntrroza" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <form class="form" id="contact-form">
+          <div class="form__field">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+          </div>
+
+          <div class="form__field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+          </div>
+
+          <div class="form__field">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntame del proyecto" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary form__submit">Enviar mensaje</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
 
     <footer class="footer">
-        <div class="logo">GM<span class="text-green">.</span></div>
-    </footer>
+    <div class="container">
+      <a href="#inicio" class="logo" aria-label="Ir al inicio">GM<span>.</span></a>
+    </div>
+  </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
