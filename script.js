@@ -1,17 +1,36 @@
+const FORM_URL = "https://formspree.io/f/myeevpwj";
 const form = document.getElementById("contact-form");
+const statusBox = document.getElementById("form-status");
+const submitBtn = form.querySelector(".form__submit");
 
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", async (event) => {
   event.preventDefault();
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Enviando...";
+  statusBox.textContent = "";
+  statusBox.className = "form__status";
 
-  const nombre = form.nombre.value.trim();
-  const email = form.email.value.trim();
-  const mensaje = form.mensaje.value.trim();
+  try {
+    const response = await fetch(FORM_URL, {
+      method: "POST",
+      headers: { Accept: "application/json" },
+      body: new FormData(form),
+    });
 
-  const asunto = encodeURIComponent(`Mensaje de ${nombre} desde tu portafolio`);
-  const cuerpo = encodeURIComponent(`${mensaje}\n\nNombre: ${nombre}\nEmail: ${email}`);
+    if (!response.ok) {
+      throw new Error("Error al enviar");
+    }
 
-  window.location.href = `mailto:gerardomonterroza39@gmail.com?subject=${asunto}&body=${cuerpo}`;
-  form.reset();
+    form.reset();
+    statusBox.textContent = "¡Mensaje enviado! Te responderé pronto.";
+    statusBox.classList.add("is-ok");
+  } catch (error) {
+    statusBox.textContent = "No se pudo enviar. Intenta de nuevo o escríbeme por correo.";
+    statusBox.classList.add("is-error");
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Enviar mensaje";
+  }
 });
 
 const nav = document.getElementById("nav");

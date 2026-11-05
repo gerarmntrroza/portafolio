@@ -292,7 +292,11 @@
             <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntame del proyecto" required></textarea>
           </div>
 
+          <input type="text" name="_gotcha" class="form__trap" tabindex="-1" autocomplete="off" aria-hidden="true">
+
           <button type="submit" class="btn btn--primary form__submit">Enviar mensaje</button>
+
+          <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
     </section>

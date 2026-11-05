@@ -810,3 +810,30 @@ a {
 html {
   scroll-padding-top: 100px;
 }
+
+.form__trap {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.form__submit:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.form__status {
+  min-height: 24px;
+  margin: 0;
+  font-size: 16px;
+}
+
+.form__status.is-ok {
+  color: var(--verde);
+}
+
+.form__status.is-error {
+  color: #f87171;
+}
