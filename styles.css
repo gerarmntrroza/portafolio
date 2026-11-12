@@ -971,3 +971,17 @@ html {
     border-top: 1px solid var(--gris);
   }
 }
+
+.project-footer-nav .btn--next {
+  margin-left: auto;
+}
+
+@media (max-width: 480px) {
+  .project-footer-nav .btn {
+    flex: 1 1 100%;
+  }
+
+  .project-footer-nav .btn--next {
+    margin-left: 0;
+  }
+}
