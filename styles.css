@@ -793,7 +793,7 @@ a {
   color: var(--blanco);
 }
 
-.nav__links a[aria-current="location"] {
+.nav__links a[aria-current] {
   color: var(--blanco);
   text-decoration: underline;
   text-decoration-color: var(--verde);
@@ -836,4 +836,138 @@ html {
 
 .form__status.is-error {
   color: #f87171;
+}
+
+.project-page {
+  padding-block: 40px 70px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 32px;
+  font-family: var(--fuente-ui);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--gris);
+  transition: color 0.2s ease;
+}
+
+.back-link:hover {
+  color: var(--verde);
+}
+
+.project-hero__title {
+  margin: 0 0 16px;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.26;
+  color: var(--blanco);
+}
+
+.project-hero__lead {
+  max-width: 640px;
+  margin: 0;
+  font-size: 18px;
+  color: var(--gris);
+}
+
+.project-meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 40px 0;
+  border: 1px solid var(--gris);
+}
+
+.project-meta div {
+  padding: 16px 20px;
+}
+
+.project-meta div + div {
+  border-left: 1px solid var(--gris);
+}
+
+.project-meta dt {
+  margin: 0 0 4px;
+  font-family: var(--fuente-ui);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--gris);
+}
+
+.project-meta dd {
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--blanco);
+}
+
+.project-page .gallery {
+  margin-bottom: 0;
+}
+
+.project-section {
+  margin-top: 56px;
+}
+
+.project-section p {
+  max-width: 720px;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--gris);
+}
+
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tech-list li {
+  padding: 8px 24px;
+  border: 1px solid var(--gris);
+  font-family: var(--fuente-ui);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--verde);
+}
+
+.project-footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 64px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.project__link {
+  display: inline-block;
+  margin-top: 20px;
+  font-family: var(--fuente-ui);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--verde);
+}
+
+.project__link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .project-hero__title {
+    font-size: 36px;
+  }
+
+  .project-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .project-meta div + div {
+    border-left: 0;
+    border-top: 1px solid var(--gris);
+  }
 }

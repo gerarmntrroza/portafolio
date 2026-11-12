@@ -1,37 +1,40 @@
 const FORM_URL = "https://formspree.io/f/myeevpwj";
 const form = document.getElementById("contact-form");
-const statusBox = document.getElementById("form-status");
-const submitBtn = form.querySelector(".form__submit");
 
-form.addEventListener("submit", async (event) => {
-  event.preventDefault();
-  submitBtn.disabled = true;
-  submitBtn.textContent = "Enviando...";
-  statusBox.textContent = "";
-  statusBox.className = "form__status";
+if (form) {
+  const statusBox = document.getElementById("form-status");
+  const submitBtn = form.querySelector(".form__submit");
 
-  try {
-    const response = await fetch(FORM_URL, {
-      method: "POST",
-      headers: { Accept: "application/json" },
-      body: new FormData(form),
-    });
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Enviando...";
+    statusBox.textContent = "";
+    statusBox.className = "form__status";
 
-    if (!response.ok) {
-      throw new Error("Error al enviar");
+    try {
+      const response = await fetch(FORM_URL, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(form),
+      });
+
+      if (!response.ok) {
+        throw new Error("Error al enviar");
+      }
+
+      form.reset();
+      statusBox.textContent = "¡Mensaje enviado! Te responderé pronto.";
+      statusBox.classList.add("is-ok");
+    } catch (error) {
+      statusBox.textContent = "No se pudo enviar. Intenta de nuevo o escríbeme por correo.";
+      statusBox.classList.add("is-error");
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Enviar mensaje";
     }
-
-    form.reset();
-    statusBox.textContent = "¡Mensaje enviado! Te responderé pronto.";
-    statusBox.classList.add("is-ok");
-  } catch (error) {
-    statusBox.textContent = "No se pudo enviar. Intenta de nuevo o escríbeme por correo.";
-    statusBox.classList.add("is-error");
-  } finally {
-    submitBtn.disabled = false;
-    submitBtn.textContent = "Enviar mensaje";
-  }
-});
+  });
+}
 
 const nav = document.getElementById("nav");
 const navToggle = document.querySelector(".nav__toggle");
@@ -92,39 +95,41 @@ document.querySelectorAll(".gallery").forEach((gallery) => {
   update();
 });
 
-const watchedSections = document.querySelectorAll(".hero, main section[id]");
-const menuLinks = document.querySelectorAll(".nav__links a");
+if (document.getElementById("about")) {
+  const watchedSections = document.querySelectorAll(".hero, main section[id]");
+  const menuLinks = document.querySelectorAll(".nav__links a");
 
-function markActive(id) {
-  menuLinks.forEach((link) => {
-    if (id && link.getAttribute("href") === `#${id}`) {
-      link.setAttribute("aria-current", "location");
-    } else {
-      link.removeAttribute("aria-current");
-    }
-  });
-}
-
-const sectionObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        markActive(entry.target.id);
+  function markActive(id) {
+    menuLinks.forEach((link) => {
+      if (id && link.getAttribute("href") === `#${id}`) {
+        link.setAttribute("aria-current", "location");
+      } else {
+        link.removeAttribute("aria-current");
       }
     });
-  },
-  { rootMargin: "-40% 0px -55% 0px" }
-);
+  }
 
-watchedSections.forEach((section) => sectionObserver.observe(section));
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          markActive(entry.target.id);
+        }
+      });
+    },
+    { rootMargin: "-40% 0px -55% 0px" }
+  );
 
-window.addEventListener(
-  "scroll",
-  () => {
-    const atBottom = window.innerHeight + window.scrollY >= document.body.scrollHeight - 2;
-    if (atBottom) {
-      markActive("contact");
-    }
-  },
-  { passive: true }
-);
+  watchedSections.forEach((section) => sectionObserver.observe(section));
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      const atBottom = window.innerHeight + window.scrollY >= document.body.scrollHeight - 2;
+      if (atBottom) {
+        markActive("contact");
+      }
+    },
+    { passive: true }
+  );
+}
