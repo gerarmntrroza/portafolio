@@ -1,12 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <url>
-    <loc>https://gerarmntrroza.github.io/portafolio/proyectos/door-to-door.html</loc>
-  </url>
-    <url>
-    <loc>https://gerarmntrroza.github.io/portafolio/proyectos/imdress.html</loc>
-  </url>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://gerarmntrroza.github.io/portafolio/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://gerarmntrroza.github.io/portafolio/proyectos/door-to-door.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gerarmntrroza.github.io/portafolio/proyectos/imdress.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gerarmntrroza.github.io/portafolio/proyectos/tesis-apa.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gerarmntrroza.github.io/portafolio/proyectos/mini-libro.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gerarmntrroza.github.io/portafolio/proyectos/aseo-escolar.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <priority>0.7</priority>
   </url>
 </urlset>

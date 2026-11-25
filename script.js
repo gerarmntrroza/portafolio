@@ -132,4 +132,68 @@ if (document.getElementById("about")) {
     },
     { passive: true }
   );
+
+  const copyEmailBtn = document.getElementById("copy-email-btn");
+const emailText = document.getElementById("email-text");
+
+if (copyEmailBtn && emailText) {
+  copyEmailBtn.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(emailText.textContent.trim());
+      copyEmailBtn.textContent = "¡Copiado!";
+      copyEmailBtn.classList.add("is-copied");
+      setTimeout(() => {
+        copyEmailBtn.textContent = "Copiar";
+        copyEmailBtn.classList.remove("is-copied");
+      }, 2000);
+    } catch {
+      copyEmailBtn.textContent = "Error";
+    }
+  });
+}
+
+const galleryImages = document.querySelectorAll(".gallery__track img");
+
+if (galleryImages.length > 0) {
+  const lightbox = document.createElement("div");
+  lightbox.className = "lightbox";
+  lightbox.setAttribute("role", "dialog");
+  lightbox.setAttribute("aria-modal", "true");
+  lightbox.setAttribute("aria-label", "Imagen ampliada");
+  lightbox.innerHTML = `
+    <button type="button" class="lightbox__close" aria-label="Cerrar vista ampliada">×</button>
+    <img class="lightbox__img" src="" alt="">
+  `;
+  document.body.appendChild(lightbox);
+
+  const lightboxImg = lightbox.querySelector(".lightbox__img");
+  const closeBtn = lightbox.querySelector(".lightbox__close");
+
+  const closeLightbox = () => {
+    lightbox.classList.remove("is-open");
+    document.body.style.overflow = "";
+  };
+
+  galleryImages.forEach((img) => {
+    img.addEventListener("click", () => {
+      lightboxImg.src = img.currentSrc || img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add("is-open");
+      document.body.style.overflow = "hidden";
+      closeBtn.focus();
+    });
+  });
+
+  closeBtn.addEventListener("click", closeLightbox);
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && lightbox.classList.contains("is-open")) {
+      closeLightbox();
+    }
+  });
+}
 }
